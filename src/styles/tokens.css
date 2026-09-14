@@ -54,7 +54,9 @@
   /* --- layout --- */
   --container-max: 1360px;
   --gutter: clamp(1.1rem, 4.5vw, 3rem);
-  --header-h: clamp(4rem, 6vw, 5.25rem);
+  --header-h: clamp(3.6rem, 5.4vw, 4.75rem);
+  --header-gap: clamp(0.6rem, 2.2vw, 1.25rem);
+  --header-radius: clamp(18px, 2vw, 28px);
   --section-pad-y: clamp(4.5rem, 9vw, 8.5rem);
   --radius-s: 2px;
   --radius-m: 6px;

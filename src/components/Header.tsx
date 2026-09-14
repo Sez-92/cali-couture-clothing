@@ -30,7 +30,7 @@ export default function Header({ bagCount }: { bagCount: number }) {
       <div className="header__bg" aria-hidden="true" />
       <div className="header__inner container">
         <a href="#top" className="header__logo" aria-label="Cali Couture — Startseite">
-          <img src="./assets/logos/cali-couture-wordmark-white.svg" alt="Cali Couture" />
+          <img src="./assets/logos/cali-couture-wordmark.svg" alt="Cali Couture" />
         </a>
 
         <nav className="header__nav" aria-label="Hauptnavigation">

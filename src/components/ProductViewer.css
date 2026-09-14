@@ -307,7 +307,7 @@
   }
   .viewer__panel {
     position: sticky;
-    top: calc(var(--header-h) + 1.5rem);
+    top: calc(var(--header-gap) + var(--header-h) + 1.5rem);
     padding-top: 1rem;
   }
 }
