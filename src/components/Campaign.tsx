@@ -2,14 +2,9 @@ import "./Campaign.css";
 
 export default function Campaign() {
   return (
-    <section className="campaign" aria-labelledby="campaign-heading">
+    <section className="campaign" aria-label="Editorial">
       <div className="container">
-        <div className="section-head">
-          <span className="mono-label">CAMPAIGN_001 / OUTDOOR</span>
-          <h2 id="campaign-heading" className="display-l">
-            FORM FOLLOWS MOVEMENT.
-          </h2>
-        </div>
+        <span className="mono-label campaign__tag">FOUNDATION 001</span>
       </div>
 
       <div className="campaign__wide">

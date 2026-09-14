@@ -38,14 +38,7 @@ export default function Lookbook() {
   const current = MODEL_IMAGES[index];
 
   return (
-    <section id="lookbook" className="lookbook">
-      <div className="container">
-        <div className="section-head">
-          <span className="mono-label">EDITORIAL / 02</span>
-          <h2 className="display-l">LOOKBOOK</h2>
-        </div>
-      </div>
-
+    <section id="lookbook" className="lookbook" aria-label="Lookbook">
       <div
         className="lookbook__stage"
         ref={sectionRef}
@@ -57,7 +50,6 @@ export default function Lookbook() {
         onTouchEnd={onTouchEnd}
       >
         <img key={current.src} src={current.src} alt={current.alt} className="lookbook__img" />
-        <span className="lookbook__label mono-label">{current.label}</span>
 
         <button type="button" className="lookbook__nav lookbook__nav--prev" onClick={prev} aria-label="Vorheriges Bild">
           <ArrowIcon direction="left" />

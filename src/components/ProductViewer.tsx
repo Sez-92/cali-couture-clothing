@@ -42,21 +42,15 @@ export default function ProductViewer({
   return (
     <section id="drop" className="viewer-section">
       <div className="container">
-        <div className="section-head">
-          <span className="mono-label">{PRODUCT.drop} / PRODUCT VIEWER</span>
-          <h2 className="display-l">{PRODUCT.collection}</h2>
-        </div>
-
         <div className="viewer">
           <div className="viewer__stage-wrap">
             <div className="viewer__stage" data-color={color}>
-              <span className="viewer__tag viewer__tag--tl mono-label">FOUNDATION_TEE</span>
-              <span className="viewer__tag viewer__tag--tr mono-label">
-                {side === "front" ? "01" : "02"}/02
-              </span>
-              <img key={src} src={src} alt={`FOUNDATION TEE, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`} className="viewer__img" />
-              <span className="viewer__tag viewer__tag--bl mono-label">{COLOR_META[color].label}</span>
-              <span className="viewer__tag viewer__tag--br mono-label">{PRODUCT.drop}</span>
+              <img
+                key={src}
+                src={src}
+                alt={`FOUNDATION TEE, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`}
+                className="viewer__img"
+              />
             </div>
 
             <div className="viewer__side-switch" role="group" aria-label="Ansicht wechseln">
@@ -75,18 +69,10 @@ export default function ProductViewer({
           </div>
 
           <div className="viewer__panel">
-            <p className="mono-label">{PRODUCT.production}</p>
             <h3 className="display-m">{PRODUCT.name}</h3>
-
-            <div className="viewer__price">
-              <span className="viewer__price-now">{formatPrice(PRODUCT.priceCents)}</span>
-              <span className="viewer__price-later">
-                später {formatPrice(PRODUCT.laterPriceCents)}
-              </span>
-            </div>
+            <span className="viewer__price-now">{formatPrice(PRODUCT.priceCents)}</span>
 
             <div className="viewer__control-block">
-              <span className="mono-label">FARBE / {COLOR_META[color].label}</span>
               <div className="viewer__swatches" role="group" aria-label="Farbe wählen">
                 {(Object.keys(COLOR_META) as ProductColor[]).map((c) => (
                   <button
@@ -103,7 +89,6 @@ export default function ProductViewer({
             </div>
 
             <div className="viewer__control-block">
-              <span className="mono-label">GRÖSSE {size ? `/ ${size}` : ""}</span>
               <div className="viewer__sizes" role="group" aria-label="Größe wählen">
                 {SIZES.map((s) => (
                   <button
@@ -125,44 +110,13 @@ export default function ProductViewer({
               onClick={handlePreorder}
               disabled={!size}
             >
-              {justAdded ? "ZUM PREORDER HINZUGEFÜGT" : size ? `PREORDER — ${formatPrice(PRODUCT.priceCents)}` : "GRÖSSE WÄHLEN"}
+              {justAdded ? "HINZUGEFÜGT" : size ? `PREORDER — ${formatPrice(PRODUCT.priceCents)}` : "GRÖSSE WÄHLEN"}
             </button>
-            <p className="viewer__note body-muted">
-              Preorder-Artikel. Keine sofortige Lieferung — Details unter{" "}
-              <a href="#preorder" className="viewer__note-link">
-                PREORDER
-              </a>
-              .
-            </p>
+
+            <p className="viewer__fit">OVERSIZED FIT · HEAVYWEIGHT COTTON · PREORDER</p>
           </div>
         </div>
-
-        <TechSpecsInline />
       </div>
     </section>
-  );
-}
-
-function TechSpecsInline() {
-  const rows: [string, string][] = [
-    ["FIT", PRODUCT.fit],
-    ["WEIGHT", PRODUCT.weight],
-    ["DROP", "001"],
-    ["FRONT", PRODUCT.frontDetail],
-    ["BACK", PRODUCT.backDetail],
-    ["PRODUCTION", PRODUCT.production],
-  ];
-  return (
-    <div className="specs">
-      <span className="mono-label specs__label">SPEC_SHEET / FOUNDATION_TEE</span>
-      <div className="specs__grid">
-        {rows.map(([k, v]) => (
-          <div className="specs__row" key={k}>
-            <span className="specs__key mono-label">{k}</span>
-            <span className="specs__value">{v}</span>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }

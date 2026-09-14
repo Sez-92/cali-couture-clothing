@@ -5,67 +5,18 @@
 
 .preorder__lede {
   max-width: 60ch;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.preorder__steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--c-line);
-  margin-bottom: clamp(3rem, 7vw, 5rem);
-}
-
-.preorder__step {
-  padding-block: 1.6rem;
-  border-bottom: 1px solid var(--c-line);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  align-items: flex-start;
-  min-width: 0;
-}
-
-.preorder__step-key {
-  order: 2;
-}
-
-.preorder__step p {
-  order: 3;
-  max-width: 46ch;
-}
-
-.preorder__cols {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 6vw, 3rem);
-}
-
-.preorder__block {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  min-width: 0;
-  background: var(--bg-panel);
-  border: 1px solid var(--c-line);
-  border-radius: var(--radius-m);
-  padding: clamp(1.4rem, 4vw, 2rem);
+.preorder__accordion {
+  max-width: 640px;
 }
 
 .preorder__table-wrap {
   width: 100%;
   overflow-x: auto;
   border: 1px solid var(--c-line-strong);
-}
-
-.preorder__table-hint {
-  display: block;
-  margin-top: 0.6rem;
-}
-
-@media (min-width: 480px) {
-  .preorder__table-hint {
-    display: none;
-  }
+  margin-top: 0.5rem;
 }
 
 .preorder__table {
@@ -94,52 +45,8 @@
   border-bottom: none;
 }
 
-.preorder__list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.preorder__list li {
-  padding-left: 1.1rem;
-  position: relative;
-}
-.preorder__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  background: var(--c-sand);
-}
-
 .preorder__fineprint {
   font-size: var(--fs-mono);
   font-family: var(--font-mono);
-}
-
-.preorder__cta-row {
-  margin-top: clamp(2.5rem, 6vw, 3.5rem);
-  display: flex;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .preorder__steps {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .preorder__step {
-    border-right: 1px solid var(--c-line);
-    padding-right: 1.4rem;
-  }
-  .preorder__step:last-child {
-    border-right: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .preorder__cols {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  margin-top: 0.6rem;
 }

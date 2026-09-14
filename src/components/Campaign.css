@@ -1,5 +1,6 @@
 .campaign {
   background: var(--bg-main);
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .campaign__wide {
@@ -9,7 +10,7 @@
   width: 100vw;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: clamp(1.8rem, 4vw, 2.8rem);
+  margin-top: clamp(0.9rem, 2.5vw, 1.4rem);
   aspect-ratio: 1672 / 941;
   overflow: hidden;
 }

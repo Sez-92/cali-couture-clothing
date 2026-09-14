@@ -15,14 +15,6 @@ const FAQ_ITEMS = [
     a: "Ja, solange das Preorder-Fenster offen ist. Wähle im Produkt-Viewer einfach erneut deine Größe. Nach Fensterschluss ist ein Tausch nur nach Verfügbarkeit möglich.",
   },
   {
-    q: "Was passiert, wenn das Preorder-Ziel nicht erreicht wird?",
-    a: "Wird eine Mindestmenge nicht erreicht, informieren wir alle Preorder-Kund:innen aktiv und transparent über die nächsten Schritte, inklusive vollständiger Rückerstattung.",
-  },
-  {
-    q: "Wie funktionieren Rückgaben?",
-    a: "Es gilt das gesetzliche 14-tägige Widerrufsrecht ab Erhalt der Ware. Details dazu findest du im Bereich PREORDER sowie in der finalen Widerrufsbelehrung im Checkout.",
-  },
-  {
     q: "Ist SAND genauso verfügbar wie CHARCOAL?",
     a: "Beide Farbwege laufen im selben Preorder-Fenster und in vergleichbarer Stückzahl. Verfügbarkeit je Größe kann sich dennoch farbabhängig unterscheiden.",
   },
@@ -34,10 +26,7 @@ export default function Faq() {
   return (
     <section id="faq" className="faq">
       <div className="container">
-        <div className="section-head">
-          <span className="mono-label">SUPPORT</span>
-          <h2 className="display-l">FAQ</h2>
-        </div>
+        <h2 className="display-l faq__heading">FAQ</h2>
 
         <ul className="faq__list">
           {FAQ_ITEMS.map((item, i) => {

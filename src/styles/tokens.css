@@ -19,6 +19,8 @@
   /* on-dark = light-tinted (for graphite surfaces) */
   --c-line-on-dark: rgba(239, 237, 231, 0.16);
   --c-line-on-dark-strong: rgba(239, 237, 231, 0.26);
+  /* very low-contrast technical grid, used sparingly as brand texture */
+  --grid-line: rgba(21, 21, 21, 0.028);
 
   /* --- brand --- */
   --c-sand: #b9a87d;

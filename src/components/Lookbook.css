@@ -22,19 +22,6 @@
   animation: viewer-fade var(--dur-mid) var(--ease-out);
 }
 
-.lookbook__label {
-  position: absolute;
-  left: clamp(0.8rem, 3vw, 1.4rem);
-  bottom: clamp(0.8rem, 3vw, 1.4rem);
-  color: var(--c-off-white);
-  background: rgba(32, 30, 27, 0.6);
-  padding: 0.4em 0.7em;
-  backdrop-filter: blur(6px);
-}
-.lookbook__label::before {
-  background: var(--c-sand);
-}
-
 .lookbook__nav {
   position: absolute;
   top: 50%;

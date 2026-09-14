@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { PRODUCT, formatPrice } from "../data/product";
 import "./Hero.css";
 
 export default function Hero() {
@@ -31,26 +32,17 @@ export default function Hero() {
 
   return (
     <section id="top" className="hero">
-      <div className="hero__grid" aria-hidden="true" />
-      <img
-        className="hero__mark"
-        src="./assets/logos/cali-couture-mark.svg"
-        alt=""
-        aria-hidden="true"
-      />
-
       <div className="hero__inner container">
-        <div className="hero__meta">
-          <span className="mono-label">DROP_001</span>
-          <span className="mono-label">PREORDER_WINDOW / 14 DAYS</span>
-          <span className="mono-label">SYSTEM / CALI_COUTURE</span>
+        <div className="hero__copy">
+          <h1 className="hero__headline display-xl">
+            FOUNDATION
+            <br />
+            001
+          </h1>
+          <p className="hero__sub">
+            Heavy Oversized Tee <span className="hero__dot">·</span> {formatPrice(PRODUCT.priceCents)}
+          </p>
         </div>
-
-        <h1 className="hero__headline display-xl">
-          FOUNDATION
-          <br />
-          001
-        </h1>
 
         <div ref={artRef} className="hero__art">
           <img
@@ -61,20 +53,9 @@ export default function Hero() {
           />
         </div>
 
-        <div className="hero__foot">
-          <p className="body-l hero__tagline">
-            BUILT BETWEEN STREET &amp; MOVEMENT.
-            <br />
-            QUIET FRONT. LOUD BACK.
-          </p>
-          <a href="#drop" className="btn btn-primary">
-            EXPLORE DROP
-          </a>
-        </div>
-      </div>
-
-      <div className="hero__scroll mono-label" aria-hidden="true">
-        SCROLL
+        <a href="#drop" className="btn btn-primary hero__cta">
+          PREORDER
+        </a>
       </div>
     </section>
   );
