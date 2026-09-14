@@ -16,6 +16,7 @@
   width: 100%;
   overflow-x: auto;
   border: 1px solid var(--c-line-strong);
+  border-radius: var(--radius-md);
   margin-top: 0.5rem;
 }
 

@@ -10,6 +10,7 @@
   aspect-ratio: 3 / 4;
   background: var(--graphite);
   border: 1px solid var(--c-line-on-dark);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   touch-action: pan-y;
 }

@@ -204,7 +204,7 @@ section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid var(--c-line-strong);
-  border-radius: var(--radius-s);
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
   white-space: nowrap;

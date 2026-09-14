@@ -58,10 +58,14 @@
   --gutter: clamp(1.1rem, 4.5vw, 3rem);
   --header-h: clamp(3.6rem, 5.4vw, 4.75rem);
   --header-gap: clamp(0.6rem, 2.2vw, 1.25rem);
-  --header-radius: clamp(18px, 2vw, 28px);
   --section-pad-y: clamp(4.5rem, 9vw, 8.5rem);
-  --radius-s: 2px;
-  --radius-m: 6px;
+
+  /* --- radius system: reuse everywhere, don't invent one-off values --- */
+  --radius-sm: 12px; /* buttons, selectors, small controls */
+  --radius-md: 16px; /* accordions, size guide, FAQ, primary CTA */
+  --radius-lg: 22px; /* large content panels / editorial blocks */
+  --radius-xl: 24px; /* floating header */
+  --radius-pill: 999px; /* chips / toggles deliberately pill-shaped */
 
   /* --- motion --- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
