@@ -1,30 +1,42 @@
 :root {
-  /* --- surfaces --- */
-  --c-black: #08090a;
-  --c-graphite: #111315;
-  --c-surface: #171a1d;
-  --c-surface-2: #1d2124;
-  --c-line: rgba(238, 233, 223, 0.1);
-  --c-line-strong: rgba(238, 233, 223, 0.22);
+  /* --- warm mineral surfaces --- */
+  --bg-main: #c8c4bc;
+  --bg-soft: #d9d5cd;
+  --bg-panel: #b7b3ac;
+
+  /* --- ink / text --- */
+  --text-main: #151515;
+  --text-muted: #45423c;
+
+  /* --- graphite (dark accent surfaces) --- */
+  --graphite: #201e1b;
+  --graphite-2: #2b2925;
+  --c-muted: #a39f97; /* muted text tuned for use ON graphite surfaces */
+
+  /* --- lines: default = dark-tinted (for warm mineral surfaces) --- */
+  --c-line: rgba(21, 21, 21, 0.14);
+  --c-line-strong: rgba(21, 21, 21, 0.24);
+  /* on-dark = light-tinted (for graphite surfaces) */
+  --c-line-on-dark: rgba(239, 237, 231, 0.16);
+  --c-line-on-dark-strong: rgba(239, 237, 231, 0.26);
 
   /* --- brand --- */
   --c-sand: #b9a87d;
-  --c-sand-deep: #96825a;
-  --c-off-white: #eee9df;
+  --c-sand-deep: #8c7a52;
+  --c-off-white: var(--chrome-light); /* bright neutral, for text/icons on graphite */
   --c-ink: #2e3134;
-  --c-muted: #8e908f;
 
   /* --- chrome --- */
-  --c-chrome-1: #f4f5f6;
-  --c-chrome-2: #aeb3b8;
-  --c-chrome-3: #55595e;
+  --chrome-light: #efede7;
+  --chrome-mid: #96938d;
+  --chrome-deep: #6e6b64;
   --gradient-chrome: linear-gradient(
     115deg,
-    var(--c-chrome-3) 0%,
-    var(--c-chrome-1) 28%,
-    var(--c-chrome-2) 45%,
-    var(--c-chrome-1) 62%,
-    var(--c-chrome-3) 100%
+    var(--chrome-deep) 0%,
+    var(--chrome-light) 28%,
+    var(--chrome-mid) 45%,
+    var(--chrome-light) 62%,
+    var(--chrome-deep) 100%
   );
 
   /* --- type --- */
@@ -53,7 +65,7 @@
   --dur-mid: 420ms;
   --dur-slow: 900ms;
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {

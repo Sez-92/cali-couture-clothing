@@ -1,5 +1,5 @@
 .preorder {
-  background: var(--c-graphite);
+  background: var(--bg-main);
   border-top: 1px solid var(--c-line);
 }
 
@@ -45,6 +45,10 @@
   flex-direction: column;
   gap: 1.1rem;
   min-width: 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-m);
+  padding: clamp(1.4rem, 4vw, 2rem);
 }
 
 .preorder__table-wrap {
@@ -81,7 +85,7 @@
 }
 
 .preorder__table th {
-  color: var(--c-muted);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   font-weight: 500;
 }

@@ -1,7 +1,11 @@
 .footer {
-  background: var(--c-black);
-  border-top: 1px solid var(--c-line);
+  background: var(--graphite);
+  border-top: 1px solid var(--c-line-on-dark);
   padding-block: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 2rem);
+}
+
+.footer .mono-label {
+  color: var(--c-muted);
 }
 
 .footer__inner {

@@ -15,8 +15,8 @@
   gap: 1.4rem;
   min-width: 0;
   padding: clamp(1.4rem, 4vw, 2rem);
-  background: linear-gradient(160deg, var(--c-surface), var(--c-graphite));
-  border: 1px solid var(--c-line-strong);
+  background: linear-gradient(160deg, var(--graphite-2), var(--graphite));
+  border: 1px solid var(--c-line-on-dark-strong);
   border-radius: var(--radius-m);
   overflow: hidden;
   transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
@@ -43,8 +43,8 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--c-black);
-  border: 1px solid var(--c-line-strong);
+  background: var(--graphite-2);
+  border: 1px solid var(--c-line-on-dark-strong);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,6 +60,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.sound__card .mono-label {
+  color: var(--c-muted);
 }
 
 .sound__card-title {

@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="hero__grid" aria-hidden="true" />
       <img
         className="hero__mark"
-        src="./assets/logos/cali-couture-mark-white.svg"
+        src="./assets/logos/cali-couture-mark.svg"
         alt=""
         aria-hidden="true"
       />

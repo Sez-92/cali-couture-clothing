@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(120% 90% at 50% 0%, var(--c-graphite) 0%, var(--c-black) 62%);
+  background: radial-gradient(120% 90% at 50% 0%, var(--bg-soft) 0%, var(--bg-main) 62%);
 }
 
 .hero__grid {
@@ -24,7 +24,7 @@
   top: 6%;
   right: -8%;
   width: min(60vw, 620px);
-  opacity: 0.05;
+  opacity: 0.07;
   pointer-events: none;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .hero__headline {
-  color: var(--c-off-white);
+  color: var(--text-main);
   min-width: 0;
   overflow-wrap: break-word;
 }

@@ -49,7 +49,7 @@ export default function ProductViewer({
 
         <div className="viewer">
           <div className="viewer__stage-wrap">
-            <div className="viewer__stage">
+            <div className="viewer__stage" data-color={color}>
               <span className="viewer__tag viewer__tag--tl mono-label">FOUNDATION_TEE</span>
               <span className="viewer__tag viewer__tag--tr mono-label">
                 {side === "front" ? "01" : "02"}/02

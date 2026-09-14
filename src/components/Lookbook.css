@@ -8,8 +8,8 @@
   max-width: 640px;
   margin-inline: auto;
   aspect-ratio: 3 / 4;
-  background: var(--c-surface);
-  border: 1px solid var(--c-line);
+  background: var(--graphite);
+  border: 1px solid var(--c-line-on-dark);
   overflow: hidden;
   touch-action: pan-y;
 }
@@ -27,7 +27,7 @@
   left: clamp(0.8rem, 3vw, 1.4rem);
   bottom: clamp(0.8rem, 3vw, 1.4rem);
   color: var(--c-off-white);
-  background: rgba(8, 9, 10, 0.55);
+  background: rgba(32, 30, 27, 0.6);
   padding: 0.4em 0.7em;
   backdrop-filter: blur(6px);
 }
@@ -44,15 +44,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 9, 10, 0.55);
+  background: rgba(32, 30, 27, 0.6);
   color: var(--c-off-white);
-  border: 1px solid var(--c-line-strong);
+  border: 1px solid var(--c-line-on-dark-strong);
   border-radius: 50%;
   backdrop-filter: blur(6px);
   transition: background var(--dur-fast) var(--ease-out);
 }
 .lookbook__nav:hover {
-  background: rgba(8, 9, 10, 0.8);
+  background: rgba(32, 30, 27, 0.85);
 }
 .lookbook__nav--prev {
   left: clamp(0.6rem, 2.5vw, 1.2rem);
