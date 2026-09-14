@@ -30,6 +30,8 @@ export default function ProductViewer({
     );
   }, []);
 
+  const src = PRODUCT_IMAGES[color][side];
+
   function handlePreorder() {
     if (!size) return;
     onPreorder();
@@ -43,25 +45,12 @@ export default function ProductViewer({
         <div className="viewer">
           <div className="viewer__stage-wrap">
             <div className="viewer__stage" data-color={color}>
-              {(["back", "front"] as ProductSide[]).map((s) => {
-                const isActive = side === s;
-                const label = s === "front" ? "Vorderansicht" : "Rückansicht";
-                return (
-                  <div
-                    key={s}
-                    className={`viewer__slot ${isActive ? "is-active" : "is-behind"}`}
-                    onClick={() => !isActive && setSide(s)}
-                    aria-hidden={isActive ? undefined : true}
-                  >
-                    <img
-                      key={PRODUCT_IMAGES[color][s]}
-                      src={PRODUCT_IMAGES[color][s]}
-                      alt={isActive ? `FOUNDATION TEE, ${COLOR_META[color].label}, ${label}` : ""}
-                      className="viewer__img"
-                    />
-                  </div>
-                );
-              })}
+              <img
+                key={src}
+                src={src}
+                alt={`FOUNDATION TEE, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`}
+                className="viewer__img"
+              />
             </div>
 
             <div className="viewer__side-switch" role="group" aria-label="Ansicht wechseln">

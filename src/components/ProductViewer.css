@@ -31,8 +31,6 @@
   justify-content: center;
   padding: clamp(1rem, 4vw, 2rem);
   overflow: visible;
-  perspective: 1600px;
-  --shirt-shadow: drop-shadow(0 28px 40px rgba(21, 21, 21, 0.22));
 }
 
 /* Optional liquid-glass ambience: a large, diffuse, edgeless light form
@@ -85,81 +83,29 @@
   opacity: 0.95;
 }
 
-.viewer__stage[data-color="sand"] {
-  --shirt-shadow: drop-shadow(0 4px 8px rgba(21, 21, 21, 0.22)) drop-shadow(0 28px 42px rgba(21, 21, 21, 0.26));
-}
-
-/* Both front and back sit in the stage at all times; only the active
-   slot's z-position/rotation and opacity change, so switching sides is a
-   soft depth transition instead of a hard image swap. */
-.viewer__slot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  transition: transform var(--dur-stack) var(--ease-out), opacity var(--dur-stack) var(--ease-out);
-  will-change: transform, opacity;
-}
-
-.viewer__slot.is-active {
-  z-index: 2;
-  opacity: 1;
-  transform: translate(-50%, -50%) translate3d(0, 0, 0) rotateY(0deg);
-}
-
-.viewer__slot.is-behind {
-  z-index: 1;
-  opacity: 0.5;
-  cursor: pointer;
-  transform: translate(-50%, -50%) translate3d(5%, 6%, -170px) rotateY(-16deg);
-}
-
-@media (hover: hover) {
-  .viewer__slot.is-behind:hover {
-    opacity: 0.75;
-    transform: translate(-50%, -50%) translate3d(4%, 4%, -110px) rotateY(-11deg);
-  }
-}
-
 .viewer__img {
-  height: 100%;
+  position: relative;
+  z-index: 1;
+  height: 80%;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: var(--shirt-shadow);
-  animation: viewer-float 6.5s ease-in-out infinite, viewer-fade var(--dur-mid) var(--ease-out);
+  filter: drop-shadow(0 28px 40px rgba(21, 21, 21, 0.22));
+  animation: viewer-fade var(--dur-mid) var(--ease-out);
 }
 
-.viewer__slot.is-behind .viewer__img {
-  filter: var(--shirt-shadow) brightness(0.94);
+.viewer__stage[data-color="sand"] .viewer__img {
+  filter: drop-shadow(0 4px 8px rgba(21, 21, 21, 0.22)) drop-shadow(0 28px 42px rgba(21, 21, 21, 0.26));
 }
 
 @keyframes viewer-fade {
   from {
     opacity: 0;
+    transform: scale(0.97) translateY(6px);
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes viewer-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -5px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .viewer__img {
-    animation: none;
+    transform: none;
   }
 }
 
