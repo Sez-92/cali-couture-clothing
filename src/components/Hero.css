@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding-top: calc(var(--header-h) + clamp(1.5rem, 5vw, 3rem));
+  padding-bottom: clamp(2rem, 6vw, 4rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 0%, var(--c-graphite) 0%, var(--c-black) 62%);
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--c-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-line) 1px, transparent 1px);
+  background-size: clamp(48px, 6vw, 96px) clamp(48px, 6vw, 96px);
+  mask-image: radial-gradient(80% 70% at 50% 30%, #000 40%, transparent 100%);
+  opacity: 0.6;
+}
+
+.hero__mark {
+  position: absolute;
+  top: 6%;
+  right: -8%;
+  width: min(60vw, 620px);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.hero__headline {
+  color: var(--c-off-white);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.hero__art {
+  --mx: 0;
+  --my: 0;
+  justify-self: center;
+  width: min(78vw, 380px);
+  min-width: 0;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+
+.hero__shirt {
+  width: 100%;
+  transform: translate3d(calc(var(--mx) * 8px), calc(var(--my) * 8px + 0px), 0);
+  animation: hero-float 7s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__shirt {
+    animation: none;
+  }
+}
+
+.hero__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.hero__tagline {
+  max-width: 26ch;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: clamp(1rem, 3vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .hero__foot {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas:
+      "meta art"
+      "headline art"
+      "foot art";
+    align-items: center;
+  }
+  .hero__meta {
+    grid-area: meta;
+  }
+  .hero__headline {
+    grid-area: headline;
+  }
+  .hero__art {
+    grid-area: art;
+    width: min(30vw, 460px);
+    justify-self: end;
+  }
+  .hero__foot {
+    grid-area: foot;
+  }
+}

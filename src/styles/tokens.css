@@ -1,0 +1,65 @@
+:root {
+  /* --- surfaces --- */
+  --c-black: #08090a;
+  --c-graphite: #111315;
+  --c-surface: #171a1d;
+  --c-surface-2: #1d2124;
+  --c-line: rgba(238, 233, 223, 0.1);
+  --c-line-strong: rgba(238, 233, 223, 0.22);
+
+  /* --- brand --- */
+  --c-sand: #b9a87d;
+  --c-sand-deep: #96825a;
+  --c-off-white: #eee9df;
+  --c-ink: #2e3134;
+  --c-muted: #8e908f;
+
+  /* --- chrome --- */
+  --c-chrome-1: #f4f5f6;
+  --c-chrome-2: #aeb3b8;
+  --c-chrome-3: #55595e;
+  --gradient-chrome: linear-gradient(
+    115deg,
+    var(--c-chrome-3) 0%,
+    var(--c-chrome-1) 28%,
+    var(--c-chrome-2) 45%,
+    var(--c-chrome-1) 62%,
+    var(--c-chrome-3) 100%
+  );
+
+  /* --- type --- */
+  --font-display: "Archivo", "Arial Narrow", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+
+  --fs-display-xl: clamp(2.3rem, 4vw + 1.3rem, 8.5rem);
+  --fs-display-l: clamp(2.1rem, 3vw + 1.2rem, 4.6rem);
+  --fs-display-m: clamp(1.5rem, 1.4vw + 1rem, 2.4rem);
+  --fs-body-l: clamp(1.05rem, 0.3vw + 0.95rem, 1.25rem);
+  --fs-body: clamp(0.92rem, 0.15vw + 0.86rem, 1.02rem);
+  --fs-mono: clamp(0.68rem, 0.1vw + 0.65rem, 0.78rem);
+
+  /* --- layout --- */
+  --container-max: 1360px;
+  --gutter: clamp(1.1rem, 4.5vw, 3rem);
+  --header-h: clamp(4rem, 6vw, 5.25rem);
+  --section-pad-y: clamp(4.5rem, 9vw, 8.5rem);
+  --radius-s: 2px;
+  --radius-m: 6px;
+
+  /* --- motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-mid: 420ms;
+  --dur-slow: 900ms;
+
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-mid: 0ms;
+    --dur-slow: 0ms;
+  }
+}
