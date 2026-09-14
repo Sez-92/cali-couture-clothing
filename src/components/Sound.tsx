@@ -21,7 +21,7 @@ export default function Sound() {
               className="sound__card"
             >
               <div className="sound__card-art" aria-hidden="true">
-                <img src="./assets/logos/cali-couture-mark-web.png" alt="" />
+                <img src="./assets/logos/cali-couture-mark-white.svg" alt="" />
               </div>
               <div className="sound__card-body">
                 <span className="mono-label">{p.tag}</span>

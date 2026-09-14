@@ -7,12 +7,12 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <img
-            src="./assets/logos/cali-couture-wordmark-web.png"
+            src="./assets/logos/cali-couture-wordmark-white.svg"
             alt="Cali Couture"
             className="footer__wordmark"
           />
           <img
-            src="./assets/logos/cali-couture-mark-web.png"
+            src="./assets/logos/cali-couture-mark-white.svg"
             alt=""
             aria-hidden="true"
             className="footer__mark"
