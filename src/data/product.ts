@@ -21,17 +21,13 @@ export const COLOR_META: Record<ProductColor, { label: string; swatch: string }>
 };
 
 export const PRODUCT = {
-  drop: "DROP_001",
-  name: "FOUNDATION TEE",
-  collection: "FOUNDATION 001",
+  drop: "DROP N°01",
+  name: "THE FORM",
+  material: "100% cotton",
   priceCents: 4990,
   laterPriceCents: 5990,
   currency: "EUR",
-  fit: "OVERSIZED",
-  weight: "HEAVYWEIGHT / TBC GSM",
-  frontDetail: "WORDMARK / LEFT CHEST",
-  backDetail: "CC LINK MARK / CENTER BACK",
-  production: "PREORDER",
+  fit: "Relaxed oversized",
 };
 
 export function formatPrice(cents: number, currency = "EUR") {
@@ -44,13 +40,13 @@ export function formatPrice(cents: number, currency = "EUR") {
 export const MODEL_IMAGES: { src: string; alt: string; label: string }[] = [
   {
     src: "./assets/model/model-black-front.webp",
-    alt: "Model trägt FOUNDATION TEE in Charcoal, Vorderansicht",
-    label: "ON_BODY / FRONT",
+    alt: "Model trägt THE FORM in Charcoal, Vorderansicht",
+    label: "Front",
   },
   {
     src: "./assets/model/model-black-back.webp",
-    alt: "Model trägt FOUNDATION TEE in Charcoal, Rückansicht",
-    label: "ON_BODY / BACK",
+    alt: "Model trägt THE FORM in Charcoal, Rückansicht",
+    label: "Back",
   },
 ];
 
@@ -58,11 +54,9 @@ export const PLAYLISTS = [
   {
     title: "Cali Couture Vibes",
     url: "https://open.spotify.com/playlist/2Xl7vPuiW9l8qLJ7162ma6",
-    tag: "PLAYLIST_01",
   },
   {
     title: "Cooking Couture",
     url: "https://open.spotify.com/playlist/2VPt838tyGbMo0UHW1Gaj8",
-    tag: "PLAYLIST_02",
   },
 ];

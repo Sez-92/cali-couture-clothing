@@ -6,9 +6,7 @@ export default function Sound() {
     <section id="sound" className="sound">
       <div className="container">
         <div className="section-head">
-          <span className="mono-label">AUDIO SYSTEM</span>
           <h2 className="display-l">CALI SOUND</h2>
-          <p className="body-l body-muted sound__lede">WEAR IT. PLAY IT.</p>
         </div>
 
         <div className="sound__grid">
@@ -24,7 +22,6 @@ export default function Sound() {
                 <img src="./assets/logos/cali-couture-mark-white.svg" alt="" />
               </div>
               <div className="sound__card-body">
-                <span className="mono-label">{p.tag}</span>
                 <h3 className="display-m sound__card-title">{p.title}</h3>
                 <span className="sound__card-cta">
                   OPEN ON SPOTIFY

@@ -9,6 +9,7 @@ import {
   type ProductSide,
   type Size,
 } from "../data/product";
+import { useLanguage } from "../i18n/LanguageContext";
 import "./ProductViewer.css";
 
 export default function ProductViewer({
@@ -16,6 +17,7 @@ export default function ProductViewer({
 }: {
   onPreorder: () => void;
 }) {
+  const { t } = useLanguage();
   const [color, setColor] = useState<ProductColor>("charcoal");
   const [side, setSide] = useState<ProductSide>("front");
   const [size, setSize] = useState<Size | null>(null);
@@ -48,12 +50,12 @@ export default function ProductViewer({
               <img
                 key={src}
                 src={src}
-                alt={`FOUNDATION TEE, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`}
+                alt={`THE FORM, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`}
                 className="viewer__img"
               />
             </div>
 
-            <div className="viewer__side-switch" role="group" aria-label="Ansicht wechseln">
+            <div className="viewer__side-switch" role="group" aria-label={t.viewer.viewLabel}>
               {(["front", "back"] as ProductSide[]).map((s) => (
                 <button
                   key={s}
@@ -69,11 +71,13 @@ export default function ProductViewer({
           </div>
 
           <div className="viewer__panel">
+            <span className="mono-label viewer__drop">{PRODUCT.drop}</span>
             <h3 className="display-m">{PRODUCT.name}</h3>
+            <p className="viewer__material body-muted">{PRODUCT.material}</p>
             <span className="viewer__price-now">{formatPrice(PRODUCT.priceCents)}</span>
 
             <div className="viewer__control-block">
-              <div className="viewer__swatches" role="group" aria-label="Farbe wählen">
+              <div className="viewer__swatches" role="group" aria-label={t.viewer.colorLabel}>
                 {(Object.keys(COLOR_META) as ProductColor[]).map((c) => (
                   <button
                     key={c}
@@ -89,7 +93,7 @@ export default function ProductViewer({
             </div>
 
             <div className="viewer__control-block">
-              <div className="viewer__sizes" role="group" aria-label="Größe wählen">
+              <div className="viewer__sizes" role="group" aria-label={t.viewer.sizeLabel}>
                 {SIZES.map((s) => (
                   <button
                     key={s}
@@ -110,10 +114,14 @@ export default function ProductViewer({
               onClick={handlePreorder}
               disabled={!size}
             >
-              {justAdded ? "HINZUGEFÜGT" : size ? `PREORDER — ${formatPrice(PRODUCT.priceCents)}` : "GRÖSSE WÄHLEN"}
+              {justAdded
+                ? t.viewer.added
+                : size
+                ? `${t.viewer.preorderPrefix} ${formatPrice(PRODUCT.priceCents)}`
+                : t.viewer.selectSize}
             </button>
 
-            <p className="viewer__fit">OVERSIZED FIT · HEAVYWEIGHT COTTON · PREORDER</p>
+            <p className="viewer__fineprint body-muted">{t.viewer.fineprint}</p>
           </div>
         </div>
       </div>

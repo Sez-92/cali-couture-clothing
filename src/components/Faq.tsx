@@ -1,35 +1,18 @@
 import { useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 import "./Faq.css";
 
-const FAQ_ITEMS = [
-  {
-    q: "Warum Preorder?",
-    a: "Wir produzieren bewusst nach Nachfrage statt auf Lager. Das reduziert Überproduktion und lässt uns in kleiner, sauberer Stückzahl fertigen — ohne Kompromisse bei der Qualität.",
-  },
-  {
-    q: "Wann wird geliefert?",
-    a: "Nach Ende des Preorder-Fensters startet die Produktion. Den genauen Zeitraum kommunizieren wir transparent auf dieser Seite und per E-Mail, sobald das Fenster schließt.",
-  },
-  {
-    q: "Kann ich die Größe ändern?",
-    a: "Ja, solange das Preorder-Fenster offen ist. Wähle im Produkt-Viewer einfach erneut deine Größe. Nach Fensterschluss ist ein Tausch nur nach Verfügbarkeit möglich.",
-  },
-  {
-    q: "Ist SAND genauso verfügbar wie CHARCOAL?",
-    a: "Beide Farbwege laufen im selben Preorder-Fenster und in vergleichbarer Stückzahl. Verfügbarkeit je Größe kann sich dennoch farbabhängig unterscheiden.",
-  },
-];
-
 export default function Faq() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section id="faq" className="faq">
       <div className="container">
-        <h2 className="display-l faq__heading">FAQ</h2>
+        <h2 className="display-l faq__heading">{t.faq.heading}</h2>
 
         <ul className="faq__list">
-          {FAQ_ITEMS.map((item, i) => {
+          {t.faq.items.map((item, i) => {
             const isOpen = open === i;
             return (
               <li className="faq__item" key={item.q}>

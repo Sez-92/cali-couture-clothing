@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 import "./PreorderProcess.css";
 
 const SIZE_ROWS: { size: string; chest: string; length: string }[] = [
@@ -10,15 +11,13 @@ const SIZE_ROWS: { size: string; chest: string; length: string }[] = [
 ];
 
 export default function PreorderProcess() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<"size" | "returns" | null>(null);
 
   return (
     <section id="preorder" className="preorder">
       <div className="container">
-        <p className="preorder__lede">
-          <strong>PREORDER.</strong> Produktion startet nach Ende des Preorder-Zeitraums. Versand nach
-          Fertigstellung.
-        </p>
+        <p className="preorder__lede body-muted">{t.preorder.lede}</p>
 
         <ul className="faq__list preorder__accordion">
           <li className="faq__item">
@@ -29,20 +28,21 @@ export default function PreorderProcess() {
               aria-controls="panel-size"
               onClick={() => setOpen(open === "size" ? null : "size")}
             >
-              <span className="display-m faq__question">Size Guide</span>
+              <span className="display-m faq__question">{t.preorder.sizeGuide}</span>
               <span className={`faq__icon ${open === "size" ? "is-open" : ""}`} aria-hidden="true">
                 +
               </span>
             </button>
             <div id="panel-size" className={`faq__panel ${open === "size" ? "is-open" : ""}`} role="region">
               <div className="faq__answer">
+                <p className="preorder__fit-hint body-muted">{t.preorder.fitHint}</p>
                 <div className="preorder__table-wrap">
                   <table className="preorder__table">
                     <thead>
                       <tr>
-                        <th>SIZE</th>
-                        <th>BRUST (FLACH)</th>
-                        <th>LÄNGE</th>
+                        <th>{t.preorder.tableHeaders.size}</th>
+                        <th>{t.preorder.tableHeaders.chest}</th>
+                        <th>{t.preorder.tableHeaders.length}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -56,7 +56,7 @@ export default function PreorderProcess() {
                     </tbody>
                   </table>
                 </div>
-                <p className="preorder__fineprint body-muted">Richtwerte, oversized Schnitt, ± 1–2 cm möglich.</p>
+                <p className="preorder__fineprint body-muted">{t.preorder.tableFineprint}</p>
               </div>
             </div>
           </li>
@@ -69,7 +69,7 @@ export default function PreorderProcess() {
               aria-controls="panel-returns"
               onClick={() => setOpen(open === "returns" ? null : "returns")}
             >
-              <span className="display-m faq__question">Returns</span>
+              <span className="display-m faq__question">{t.preorder.returns}</span>
               <span className={`faq__icon ${open === "returns" ? "is-open" : ""}`} aria-hidden="true">
                 +
               </span>
@@ -79,10 +79,7 @@ export default function PreorderProcess() {
               className={`faq__panel ${open === "returns" ? "is-open" : ""}`}
               role="region"
             >
-              <p className="body-muted faq__answer">
-                14-tägiges Widerrufsrecht ab Erhalt der Ware. Rücksendekosten trägt der Kunde. Größentausch
-                nach Verfügbarkeit.
-              </p>
+              <p className="body-muted faq__answer">{t.preorder.returnsText}</p>
             </div>
           </li>
         </ul>

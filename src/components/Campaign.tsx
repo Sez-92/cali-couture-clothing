@@ -1,16 +1,17 @@
+import { PRODUCT } from "../data/product";
 import "./Campaign.css";
 
 export default function Campaign() {
   return (
     <section className="campaign" aria-label="Editorial">
       <div className="container">
-        <span className="mono-label campaign__tag">FOUNDATION 001</span>
+        <span className="mono-label campaign__tag">{PRODUCT.drop}</span>
       </div>
 
       <div className="campaign__wide">
         <img
           src="./assets/hero/foundation-001-hero-calisthenics-split.png"
-          alt="Model im Calisthenics-Park trägt die FOUNDATION TEE, daneben eine Detailaufnahme des Shirt-Logos"
+          alt="Model im Calisthenics-Park trägt THE FORM, daneben eine Detailaufnahme des Shirt-Logos"
           className="campaign__wide-img"
         />
       </div>
@@ -18,12 +19,12 @@ export default function Campaign() {
       <div className="campaign__stack">
         <img
           src="./assets/hero/foundation-001-hero-model-mobile.png"
-          alt="Model im Calisthenics-Park trägt die FOUNDATION TEE"
+          alt="Model im Calisthenics-Park trägt THE FORM"
           className="campaign__stack-img"
         />
         <img
           src="./assets/hero/foundation-001-hero-detail-mobile.png"
-          alt="Detailaufnahme des FOUNDATION TEE Shirt-Logos"
+          alt="Detailaufnahme des THE FORM Shirt-Logos"
           className="campaign__stack-img"
         />
       </div>

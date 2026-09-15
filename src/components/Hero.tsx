@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { PRODUCT, formatPrice } from "../data/product";
+import { PRODUCT } from "../data/product";
 import "./Hero.css";
 
 export default function Hero() {
@@ -34,27 +34,22 @@ export default function Hero() {
     <section id="top" className="hero">
       <div className="hero__inner container">
         <div className="hero__copy">
-          <h1 className="hero__headline display-xl">
-            FOUNDATION
-            <br />
-            001
-          </h1>
-          <p className="hero__sub">
-            Heavy Oversized Tee <span className="hero__dot">·</span> {formatPrice(PRODUCT.priceCents)}
-          </p>
+          <span className="display-m hero__drop">{PRODUCT.drop}</span>
+          <h1 className="hero__headline display-xl">{PRODUCT.name}</h1>
+          <p className="hero__sub">Made to move.</p>
         </div>
 
         <div ref={artRef} className="hero__art">
           <img
             src="./assets/products/foundation-black-front.png"
-            alt="FOUNDATION TEE, Charcoal, Vorderansicht"
+            alt="THE FORM, Charcoal, Vorderansicht"
             className="hero__shirt"
             fetchPriority="high"
           />
         </div>
 
         <a href="#drop" className="btn btn-primary hero__cta">
-          PREORDER
+          SHOP THE DROP
         </a>
       </div>
     </section>

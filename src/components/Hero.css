@@ -34,17 +34,15 @@
   overflow-wrap: break-word;
 }
 
-.hero__sub {
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+.hero__drop {
+  color: var(--c-sand-deep);
+  margin-bottom: 0.1rem;
 }
 
-.hero__dot {
-  color: var(--c-sand-deep);
-  margin-inline: 0.3em;
+.hero__sub {
+  font-size: var(--fs-body-l);
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 .hero__art {
