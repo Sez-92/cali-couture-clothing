@@ -22,6 +22,11 @@ export const PRODUCT_IMAGES: Record<ProductColor, Record<ProductSide, string>> =
   },
 };
 
+export const PRODUCT_INSIDE_IMAGES: Record<ProductColor, string> = {
+  charcoal: "./assets/products/foundation-charcoal-inside-neck.png",
+  sand: "./assets/products/foundation-sand-inside-neck.png",
+};
+
 export const COLOR_META: Record<ProductColor, { label: string; swatch: string }> = {
   charcoal: { label: "CHARCOAL", swatch: "#2b2c2d" },
   sand: { label: "SAND", swatch: "#b9a87d" },

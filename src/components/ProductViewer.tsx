@@ -5,6 +5,7 @@ import {
   CUT_META,
   PRODUCT,
   PRODUCT_IMAGES,
+  PRODUCT_INSIDE_IMAGES,
   SIZES,
   formatPrice,
   type Cut,
@@ -26,6 +27,17 @@ export default function ProductViewer({
   const [side, setSide] = useState<ProductSide>("front");
   const [size, setSize] = useState<Size | null>(null);
   const [justAdded, setJustAdded] = useState(false);
+  const [insideOpen, setInsideOpen] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    if (!insideOpen) {
+      setShowMessage(false);
+      return;
+    }
+    const id = window.setTimeout(() => setShowMessage(true), 550);
+    return () => window.clearTimeout(id);
+  }, [insideOpen]);
 
   useEffect(() => {
     Object.values(PRODUCT_IMAGES).forEach((sides) =>
@@ -34,9 +46,13 @@ export default function ProductViewer({
         img.src = src;
       })
     );
+    Object.values(PRODUCT_INSIDE_IMAGES).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
-  const src = PRODUCT_IMAGES[color][side];
+  const src = insideOpen ? PRODUCT_INSIDE_IMAGES[color] : PRODUCT_IMAGES[color][side];
 
   function handlePreorder() {
     if (!size) return;
@@ -50,16 +66,38 @@ export default function ProductViewer({
       <div className="container">
         <div className="viewer">
           <div className="viewer__stage-wrap">
-            <div className="viewer__stage" data-color={color}>
+            <div className={`viewer__stage ${insideOpen ? "is-inside" : ""}`} data-color={color}>
               <img
                 key={src}
                 src={src}
-                alt={`THE FORM, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`}
+                alt={
+                  insideOpen
+                    ? `THE FORM, ${COLOR_META[color].label}, Innenetikett`
+                    : `THE FORM, ${COLOR_META[color].label}, ${side === "front" ? "Vorderansicht" : "Rückansicht"}`
+                }
                 className="viewer__img"
               />
+
+              <button
+                type="button"
+                className={`viewer__inside-trigger ${insideOpen ? "is-active" : ""}`}
+                onClick={() => setInsideOpen((v) => !v)}
+                aria-pressed={insideOpen}
+                aria-label={t.viewer.insideLabel}
+              >
+                {insideOpen ? "BACK TO GARMENT" : "LOOK INSIDE ↗"}
+              </button>
+
+              <span className={`viewer__inside-message ${showMessage ? "is-visible" : ""}`} aria-hidden={!insideOpen}>
+                FOLLOW YOUR DREAMS.
+              </span>
             </div>
 
-            <div className="viewer__side-switch" role="group" aria-label={t.viewer.viewLabel}>
+            <div
+              className={`viewer__side-switch ${insideOpen ? "is-disabled" : ""}`}
+              role="group"
+              aria-label={t.viewer.viewLabel}
+            >
               {(["front", "back"] as ProductSide[]).map((s) => (
                 <button
                   key={s}
@@ -67,6 +105,7 @@ export default function ProductViewer({
                   className={`viewer__pill ${side === s ? "is-active" : ""}`}
                   onClick={() => setSide(s)}
                   aria-pressed={side === s}
+                  disabled={insideOpen}
                 >
                   {s === "front" ? "FRONT" : "BACK"}
                 </button>

@@ -9,6 +9,8 @@ type Translation = {
     paragraph: string;
     pullQuote: string;
     closing: string;
+    transitionLine1: string;
+    transitionLine2: string;
   };
   viewer: {
     selectSize: string;
@@ -19,6 +21,7 @@ type Translation = {
     sizeLabel: string;
     viewLabel: string;
     cutLabel: string;
+    insideLabel: string;
   };
   preorder: {
     lede: string;
@@ -46,6 +49,8 @@ export const translations: Record<Language, Translation> = {
         "Cali Couture verbindet die Haltung von Calisthenics mit moderner Streetwear. Denn das, wofür du trainierst, was du aufbaust und was du lebst, muss nicht im Park bleiben.",
       pullQuote: "Deine Leidenschaft muss nicht im Park bleiben.",
       closing: "Für Bewegung gemacht. Für jeden Tag gedacht.",
+      transitionLine1: "Deine Leidenschaft muss nicht im Park bleiben.",
+      transitionLine2: "Nimm sie mit.",
     },
     viewer: {
       selectSize: "GRÖSSE WÄHLEN",
@@ -56,6 +61,7 @@ export const translations: Record<Language, Translation> = {
       sizeLabel: "Größe wählen",
       viewLabel: "Ansicht wechseln",
       cutLabel: "Schnitt wählen",
+      insideLabel: "Innenetikett ansehen",
     },
     preorder: {
       lede: "Produktion beginnt, sobald der Preorder-Zeitraum endet. Versand erfolgt nach Fertigstellung.",
@@ -99,6 +105,8 @@ export const translations: Record<Language, Translation> = {
         "Cali Couture combines the mindset of calisthenics with contemporary streetwear. Because what you train for, build and live shouldn't stay in the park.",
       pullQuote: "Your passion doesn't have to stay in the park.",
       closing: "Made to move. Made to be worn everywhere.",
+      transitionLine1: "Your passion doesn't have to stay in the park.",
+      transitionLine2: "Take it with you.",
     },
     viewer: {
       selectSize: "SELECT SIZE",
@@ -109,6 +117,7 @@ export const translations: Record<Language, Translation> = {
       sizeLabel: "Select size",
       viewLabel: "Switch view",
       cutLabel: "Select cut",
+      insideLabel: "View inside label",
     },
     preorder: {
       lede: "Production begins once the preorder window closes. Shipping follows once the item is made.",

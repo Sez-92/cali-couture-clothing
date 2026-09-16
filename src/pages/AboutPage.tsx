@@ -20,24 +20,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-contrast" aria-label="Calisthenics to everyday life">
-        <div className="container about-contrast__grid">
-          <figure className="about-contrast__item about-contrast__item--park">
+      <section className="park-transition" aria-label="Calisthenics to everyday life">
+        <div className="container">
+          <div className="park-transition__stage" tabIndex={0}>
             <img
               src="./assets/hero/foundation-001-hero-model-mobile.png"
               alt="Model trainiert Calisthenics im Park"
-              className="about-contrast__img"
+              className="park-transition__base"
+              loading="lazy"
             />
-            <figcaption className="about-contrast__caption">CALISTHENICS / PARK</figcaption>
-          </figure>
-          <figure className="about-contrast__item about-contrast__item--cafe">
             <img
               src="./assets/editorial/cali-couture-cafe-back-cc.png"
               alt="Model von hinten in einem Café, das große CC-Logo auf dem Rücken des Shirts sichtbar"
-              className="about-contrast__img"
+              className="park-transition__overlay"
             />
-            <figcaption className="about-contrast__caption">EVERYDAY / CITY, CAFÉ, WORK</figcaption>
-          </figure>
+
+            <div className="park-transition__copy">
+              <p className="park-transition__line park-transition__line--1">{a.transitionLine1}</p>
+              <p className="park-transition__line park-transition__line--2">{a.transitionLine2}</p>
+            </div>
+          </div>
         </div>
       </section>
 

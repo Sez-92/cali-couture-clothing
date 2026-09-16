@@ -38,9 +38,66 @@
   flex-shrink: 0;
 }
 
-.header__logo img {
+.header__logo-stage {
+  position: relative;
+  display: inline-block;
   height: clamp(17px, 2.6vw, 22px);
+}
+
+.header__logo-img {
+  display: block;
+  height: 100%;
   width: auto;
+  transition: opacity var(--dur-mid) var(--ease-out), filter var(--dur-mid) var(--ease-out);
+}
+
+.header__logo-img.is-hidden {
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.header__logo-cycle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.header__logo-cycle.is-visible {
+  opacity: 1;
+}
+
+.header__logo-phrase {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.5vw, 0.86rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  animation: logo-phrase-in 220ms var(--ease-out);
+}
+
+@keyframes logo-phrase-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__logo-phrase {
+    animation: none;
+  }
 }
 
 .header__nav {

@@ -94,6 +94,60 @@
   animation: viewer-fade var(--dur-mid) var(--ease-out);
 }
 
+.viewer__inside-trigger {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.45em 0.8em;
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--radius-pill);
+  background: rgba(239, 237, 231, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.viewer__inside-trigger:hover,
+.viewer__inside-trigger.is-active {
+  color: var(--text-main);
+  border-color: var(--graphite);
+}
+
+.viewer__inside-message {
+  position: absolute;
+  left: 50%;
+  bottom: 13%;
+  z-index: 3;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--c-sand-deep);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 900ms var(--ease-out);
+}
+
+.viewer__inside-message.is-visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer__inside-message {
+    transition: none;
+  }
+}
+
 .viewer__stage[data-color="sand"] .viewer__img {
   filter: drop-shadow(0 4px 8px rgba(21, 21, 21, 0.22)) drop-shadow(0 28px 42px rgba(21, 21, 21, 0.26));
 }
@@ -113,6 +167,12 @@
   display: flex;
   justify-content: center;
   gap: 0.6rem;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.viewer__side-switch.is-disabled {
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 .viewer__pill {
