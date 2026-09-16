@@ -1,6 +1,15 @@
 export type Language = "de" | "en";
 
 type Translation = {
+  about: {
+    eyebrow: string;
+    headline: string;
+    statementLine1: string;
+    statementLine2: string;
+    paragraph: string;
+    pullQuote: string;
+    closing: string;
+  };
   viewer: {
     selectSize: string;
     added: string;
@@ -9,6 +18,7 @@ type Translation = {
     colorLabel: string;
     sizeLabel: string;
     viewLabel: string;
+    cutLabel: string;
   };
   preorder: {
     lede: string;
@@ -27,6 +37,16 @@ type Translation = {
 
 export const translations: Record<Language, Translation> = {
   de: {
+    about: {
+      eyebrow: "ÜBER CALI COUTURE",
+      headline: "CALISTHENICS COUTURE",
+      statementLine1: "Aus Calisthenics entstanden.",
+      statementLine2: "Für überall gemacht.",
+      paragraph:
+        "Cali Couture verbindet die Haltung von Calisthenics mit moderner Streetwear. Denn das, wofür du trainierst, was du aufbaust und was du lebst, muss nicht im Park bleiben.",
+      pullQuote: "Deine Leidenschaft muss nicht im Park bleiben.",
+      closing: "Für Bewegung gemacht. Für jeden Tag gedacht.",
+    },
     viewer: {
       selectSize: "GRÖSSE WÄHLEN",
       added: "HINZUGEFÜGT",
@@ -35,6 +55,7 @@ export const translations: Record<Language, Translation> = {
       colorLabel: "Farbe wählen",
       sizeLabel: "Größe wählen",
       viewLabel: "Ansicht wechseln",
+      cutLabel: "Schnitt wählen",
     },
     preorder: {
       lede: "Produktion beginnt, sobald der Preorder-Zeitraum endet. Versand erfolgt nach Fertigstellung.",
@@ -69,6 +90,16 @@ export const translations: Record<Language, Translation> = {
     },
   },
   en: {
+    about: {
+      eyebrow: "ABOUT CALI COUTURE",
+      headline: "CALISTHENICS COUTURE",
+      statementLine1: "Born from calisthenics.",
+      statementLine2: "Made for everywhere else.",
+      paragraph:
+        "Cali Couture combines the mindset of calisthenics with contemporary streetwear. Because what you train for, build and live shouldn't stay in the park.",
+      pullQuote: "Your passion doesn't have to stay in the park.",
+      closing: "Made to move. Made to be worn everywhere.",
+    },
     viewer: {
       selectSize: "SELECT SIZE",
       added: "ADDED",
@@ -77,6 +108,7 @@ export const translations: Record<Language, Translation> = {
       colorLabel: "Select colour",
       sizeLabel: "Select size",
       viewLabel: "Switch view",
+      cutLabel: "Select cut",
     },
     preorder: {
       lede: "Production begins once the preorder window closes. Shipping follows once the item is made.",

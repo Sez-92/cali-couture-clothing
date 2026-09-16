@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import {
   COLOR_META,
+  CUTS,
+  CUT_META,
   PRODUCT,
   PRODUCT_IMAGES,
   SIZES,
   formatPrice,
+  type Cut,
   type ProductColor,
   type ProductSide,
   type Size,
@@ -18,6 +21,7 @@ export default function ProductViewer({
   onPreorder: () => void;
 }) {
   const { t } = useLanguage();
+  const [cut, setCut] = useState<Cut>("boxy");
   const [color, setColor] = useState<ProductColor>("charcoal");
   const [side, setSide] = useState<ProductSide>("front");
   const [size, setSize] = useState<Size | null>(null);
@@ -42,7 +46,7 @@ export default function ProductViewer({
   }
 
   return (
-    <section id="drop" className="viewer-section">
+    <section id="product" className="viewer-section">
       <div className="container">
         <div className="viewer">
           <div className="viewer__stage-wrap">
@@ -75,6 +79,22 @@ export default function ProductViewer({
             <h3 className="display-m">{PRODUCT.name}</h3>
             <p className="viewer__material body-muted">{PRODUCT.material}</p>
             <span className="viewer__price-now">{formatPrice(PRODUCT.priceCents)}</span>
+
+            <div className="viewer__control-block">
+              <div className="viewer__cuts" role="group" aria-label={t.viewer.cutLabel}>
+                {CUTS.map((c) => (
+                  <button
+                    key={c}
+                    type="button"
+                    className={`viewer__pill ${cut === c ? "is-active" : ""}`}
+                    onClick={() => setCut(c)}
+                    aria-pressed={cut === c}
+                  >
+                    {CUT_META[c].label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             <div className="viewer__control-block">
               <div className="viewer__swatches" role="group" aria-label={t.viewer.colorLabel}>

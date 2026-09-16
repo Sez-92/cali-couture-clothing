@@ -48,7 +48,7 @@ export default function Hero() {
           />
         </div>
 
-        <a href="#drop" className="btn btn-primary hero__cta">
+        <a href="#product" className="btn btn-primary hero__cta">
           SHOP THE DROP
         </a>
       </div>

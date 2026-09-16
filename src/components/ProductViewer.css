@@ -170,6 +170,11 @@
   border-top: 1px solid var(--c-line);
 }
 
+.viewer__cuts {
+  display: flex;
+  gap: 0.6rem;
+}
+
 .viewer__swatches {
   display: flex;
   gap: 0.8rem;

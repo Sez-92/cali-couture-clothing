@@ -61,6 +61,11 @@
   opacity: 1;
 }
 
+.header__nav-link.is-active {
+  opacity: 1;
+  color: var(--c-sand-deep);
+}
+
 .header__actions {
   display: flex;
   align-items: center;

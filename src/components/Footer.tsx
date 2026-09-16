@@ -14,8 +14,8 @@ export default function Footer() {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
-          <a href="#faq">Impressum</a>
-          <a href="#faq">Datenschutz</a>
+          <a href="#/drop">Impressum</a>
+          <a href="#/drop">Datenschutz</a>
         </nav>
       </div>
     </footer>

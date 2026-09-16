@@ -1,25 +1,44 @@
 import { useLanguage } from "../i18n/LanguageContext";
+import { useHashRoute, type Route } from "../router/useHashRoute";
 import "./Header.css";
 
-const NAV_ITEMS = [
-  { href: "#drop", label: "DROP" },
-  { href: "#preorder", label: "INFO" },
+const NAV_ITEMS: { route: Route; label: string }[] = [
+  { route: "about", label: "ABOUT CC" },
+  { route: "drop", label: "DROP N°01" },
 ];
 
 export default function Header({ bagCount }: { bagCount: number }) {
   const { language, setLanguage } = useLanguage();
+  const [route, navigate] = useHashRoute();
 
   return (
     <header className="header">
       <div className="header__bg" aria-hidden="true" />
       <div className="header__inner container">
-        <a href="#top" className="header__logo" aria-label="Cali Couture — Startseite">
+        <a
+          href="#/drop"
+          className="header__logo"
+          aria-label="Cali Couture — Startseite"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("drop");
+          }}
+        >
           <img src="./assets/logos/cali-couture-wordmark.svg" alt="Cali Couture" />
         </a>
 
         <nav className="header__nav" aria-label="Hauptnavigation">
           {NAV_ITEMS.map((item) => (
-            <a key={item.href} href={item.href} className="header__nav-link mono-label">
+            <a
+              key={item.route}
+              href={item.route === "about" ? "#/about" : "#/drop"}
+              className={`header__nav-link mono-label ${route === item.route ? "is-active" : ""}`}
+              aria-current={route === item.route ? "page" : undefined}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(item.route);
+              }}
+            >
               {item.label}
             </a>
           ))}

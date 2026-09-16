@@ -1,8 +1,15 @@
 export type ProductColor = "charcoal" | "sand";
 export type ProductSide = "front" | "back";
 export type Size = "XS" | "S" | "M" | "L" | "XL";
+export type Cut = "boxy" | "cropped";
 
 export const SIZES: Size[] = ["XS", "S", "M", "L", "XL"];
+export const CUTS: Cut[] = ["boxy", "cropped"];
+
+export const CUT_META: Record<Cut, { label: string }> = {
+  boxy: { label: "BOXY" },
+  cropped: { label: "CROPPED" },
+};
 
 export const PRODUCT_IMAGES: Record<ProductColor, Record<ProductSide, string>> = {
   charcoal: {
