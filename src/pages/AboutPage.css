@@ -41,6 +41,7 @@
 
 .park-transition__stage {
   position: relative;
+  cursor: pointer;
   width: 100%;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
@@ -66,8 +67,7 @@
   transition: opacity 700ms var(--ease-out);
 }
 
-.park-transition__stage:hover .park-transition__overlay,
-.park-transition__stage:focus-visible .park-transition__overlay {
+.park-transition__stage.is-cafe .park-transition__overlay {
   opacity: 1;
 }
 
@@ -106,14 +106,12 @@
   color: var(--c-sand);
 }
 
-.park-transition__stage:hover .park-transition__line,
-.park-transition__stage:focus-visible .park-transition__line {
+.park-transition__stage.is-cafe .park-transition__line {
   opacity: 1;
   transform: none;
 }
 
-.park-transition__stage:hover .park-transition__line--2,
-.park-transition__stage:focus-visible .park-transition__line--2 {
+.park-transition__stage.is-cafe .park-transition__line--2 {
   transition-delay: 150ms;
 }
 
