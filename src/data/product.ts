@@ -51,12 +51,12 @@ export function formatPrice(cents: number, currency = "EUR") {
 
 export const MODEL_IMAGES: { src: string; alt: string; label: string }[] = [
   {
-    src: "./assets/model/mannequin-boxy-duo-v2.jpg",
+    src: "./assets/model/mannequin-boxy-duo-v3.png",
     alt: "Gesichtslose Cali Couture Schaufensterpuppen mit THE FORM in Charcoal und Sand in weiter Silhouette",
     label: "BOXY",
   },
   {
-    src: "./assets/model/mannequin-tech-duo-v2.jpg",
+    src: "./assets/model/mannequin-tech-duo-v3.png",
     alt: "Gesichtslose Cali Couture Schaufensterpuppen mit körpernäherer Tech-Shirt-Silhouette in Charcoal und Sand",
     label: "TECH",
   },

@@ -24,14 +24,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="park-transition" aria-label="Calisthenics to everyday life">
+      <section className="park-transition" aria-label="Cali Couture in Bewegung und Alltag">
         <div className="container">
           <div
             className={`park-transition__stage ${isCafe ? "is-cafe" : ""}`}
             tabIndex={0}
             role="button"
             aria-pressed={isCafe}
-            aria-label="Zwischen Cali Couture Studio und Café Couture wechseln"
+            aria-label="Zwischen Cali Couture Look und Café Couture wechseln"
             onClick={toggleScene}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
@@ -41,13 +41,13 @@ export default function AboutPage() {
             }}
           >
             <img
-              src="./assets/model/mannequin-boxy-duo-v2.jpg"
-              alt="Gesichtslose Cali Couture Schaufensterpuppen mit THE FORM in Charcoal und Sand"
+              src="./assets/model/mannequin-boxy-duo-v3.png"
+              alt="Gesichtslose Cali Couture Schaufensterpuppen in Charcoal und Sand"
               className="park-transition__base"
               loading="lazy"
             />
             <img
-              src="./assets/editorial/mannequin-cafe-cropped-back-v2.jpg"
+              src="./assets/editorial/mannequin-cafe-cropped-back-v3.png"
               alt="Gesichtslose Cali Couture Schaufensterpuppe von hinten an der Café-Bar mit großem CC-Backprint"
               className="park-transition__overlay"
               loading="lazy"
