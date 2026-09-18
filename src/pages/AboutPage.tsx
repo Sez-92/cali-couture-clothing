@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
-import {
-  MANNEQUIN_CAFE_CROPPED_BACK,
-  MANNEQUIN_CALISTHENICS_PARK,
-} from "../data/mannequinAssets";
 import "./AboutPage.css";
 
 export default function AboutPage() {
@@ -35,7 +31,7 @@ export default function AboutPage() {
             tabIndex={0}
             role="button"
             aria-pressed={isCafe}
-            aria-label="Zwischen Calisthenics-Park und Café wechseln"
+            aria-label="Zwischen Cali Couture Studio und Café Couture wechseln"
             onClick={toggleScene}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
@@ -45,15 +41,16 @@ export default function AboutPage() {
             }}
           >
             <img
-              src={MANNEQUIN_CALISTHENICS_PARK}
-              alt="Gesichtslose Cali Couture Schaufensterpuppe im Calisthenics-Park"
+              src="./assets/model/mannequin-boxy-duo.png"
+              alt="Gesichtslose Cali Couture Schaufensterpuppen mit THE FORM in Charcoal und Sand"
               className="park-transition__base"
               loading="lazy"
             />
             <img
-              src={MANNEQUIN_CAFE_CROPPED_BACK}
+              src="./assets/editorial/mannequin-cafe-cropped-back.png"
               alt="Gesichtslose Cali Couture Schaufensterpuppe von hinten an der Café-Bar mit großem CC-Backprint"
               className="park-transition__overlay"
+              loading="lazy"
             />
 
             <div className="park-transition__copy">

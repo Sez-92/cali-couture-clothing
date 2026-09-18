@@ -1,5 +1,3 @@
-import { MANNEQUIN_BOXY_DUO, MANNEQUIN_TECH_DUO } from "./mannequinAssets";
-
 export type ProductColor = "charcoal" | "sand";
 export type ProductSide = "front" | "back";
 export type Size = "XS" | "S" | "M" | "L" | "XL";
@@ -53,12 +51,12 @@ export function formatPrice(cents: number, currency = "EUR") {
 
 export const MODEL_IMAGES: { src: string; alt: string; label: string }[] = [
   {
-    src: MANNEQUIN_BOXY_DUO,
+    src: "./assets/model/mannequin-boxy-duo.png",
     alt: "Gesichtslose Cali Couture Schaufensterpuppen mit THE FORM in Charcoal und Sand in weiter Silhouette",
     label: "BOXY",
   },
   {
-    src: MANNEQUIN_TECH_DUO,
+    src: "./assets/model/mannequin-tech-duo.png",
     alt: "Gesichtslose Cali Couture Schaufensterpuppen mit körpernäherer Tech-Shirt-Silhouette in Charcoal und Sand",
     label: "TECH",
   },

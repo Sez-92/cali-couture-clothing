@@ -1,5 +1,4 @@
 import { PRODUCT } from "../data/product";
-import { MANNEQUIN_BOXY_DUO, MANNEQUIN_DESK_CHARCOAL } from "../data/mannequinAssets";
 import "./Campaign.css";
 
 export default function Campaign() {
@@ -11,22 +10,25 @@ export default function Campaign() {
 
       <div className="campaign__wide">
         <img
-          src={MANNEQUIN_DESK_CHARCOAL}
+          src="./assets/editorial/mannequin-desk-charcoal.png"
           alt="Gesichtslose Cali Couture Schaufensterpuppe arbeitet am Schreibtisch im Charcoal Shirt"
           className="campaign__wide-img"
+          loading="lazy"
         />
       </div>
 
       <div className="campaign__stack">
         <img
-          src={MANNEQUIN_DESK_CHARCOAL}
-          alt="Gesichtslose Cali Couture Schaufensterpuppe arbeitet am Schreibtisch im Charcoal Shirt"
-          className="campaign__stack-img"
-        />
-        <img
-          src={MANNEQUIN_BOXY_DUO}
+          src="./assets/model/mannequin-boxy-duo.png"
           alt="Cali Couture BOXY Silhouetten in Charcoal und Sand auf gesichtslosen Schaufensterpuppen"
           className="campaign__stack-img"
+          loading="lazy"
+        />
+        <img
+          src="./assets/model/mannequin-tech-duo.png"
+          alt="Cali Couture Tech-Shirt Silhouetten in Charcoal und Sand auf gesichtslosen Schaufensterpuppen"
+          className="campaign__stack-img"
+          loading="lazy"
         />
       </div>
     </section>
