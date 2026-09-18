@@ -51,13 +51,13 @@ export function formatPrice(cents: number, currency = "EUR") {
 
 export const MODEL_IMAGES: { src: string; alt: string; label: string }[] = [
   {
-    src: "./assets/model/model-black-front.webp",
-    alt: "Model trägt THE FORM in Charcoal, Vorderansicht",
+    src: "./assets/model/model-new-front.webp",
+    alt: "Model trägt THE FORM in Charcoal im Alltag, Vorderansicht",
     label: "Front",
   },
   {
-    src: "./assets/model/model-black-back.webp",
-    alt: "Model trägt THE FORM in Charcoal, Rückansicht",
+    src: "./assets/model/model-new-back.webp",
+    alt: "Model trägt THE FORM in Charcoal mit großem CC-Backprint, Rückansicht",
     label: "Back",
   },
 ];
