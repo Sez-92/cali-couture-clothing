@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import {
+  MANNEQUIN_CAFE_CROPPED_BACK,
+  MANNEQUIN_CALISTHENICS_PARK,
+} from "../data/mannequinAssets";
 import "./AboutPage.css";
 
 export default function AboutPage() {
   const { t } = useLanguage();
   const a = t.about;
+  const [isCafe, setIsCafe] = useState(false);
+
+  const toggleScene = () => setIsCafe((current) => !current);
 
   return (
     <main className="about-page">
@@ -22,16 +30,29 @@ export default function AboutPage() {
 
       <section className="park-transition" aria-label="Calisthenics to everyday life">
         <div className="container">
-          <div className="park-transition__stage" tabIndex={0}>
+          <div
+            className={`park-transition__stage ${isCafe ? "is-cafe" : ""}`}
+            tabIndex={0}
+            role="button"
+            aria-pressed={isCafe}
+            aria-label="Zwischen Calisthenics-Park und Café wechseln"
+            onClick={toggleScene}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleScene();
+              }
+            }}
+          >
             <img
-              src="./assets/model/model-new-front.webp"
-              alt="Model trägt THE FORM in Charcoal im Alltag"
+              src={MANNEQUIN_CALISTHENICS_PARK}
+              alt="Gesichtslose Cali Couture Schaufensterpuppe im Calisthenics-Park"
               className="park-transition__base"
               loading="lazy"
             />
             <img
-              src="./assets/editorial/cali-couture-cafe-back-cc.png"
-              alt="Model von hinten in einem Café, das große CC-Logo auf dem Rücken des Shirts sichtbar"
+              src={MANNEQUIN_CAFE_CROPPED_BACK}
+              alt="Gesichtslose Cali Couture Schaufensterpuppe von hinten an der Café-Bar mit großem CC-Backprint"
               className="park-transition__overlay"
             />
 
