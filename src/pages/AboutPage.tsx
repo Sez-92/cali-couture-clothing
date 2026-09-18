@@ -24,8 +24,8 @@ export default function AboutPage() {
         <div className="container">
           <div className="park-transition__stage" tabIndex={0}>
             <img
-              src="./assets/hero/foundation-001-hero-model-mobile.png"
-              alt="Model trainiert Calisthenics im Park"
+              src="./assets/model/model-new-front.webp"
+              alt="Model trägt THE FORM in Charcoal im Alltag"
               className="park-transition__base"
               loading="lazy"
             />
