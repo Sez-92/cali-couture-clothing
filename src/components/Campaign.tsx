@@ -10,21 +10,21 @@ export default function Campaign() {
 
       <div className="campaign__wide">
         <img
-          src="./assets/hero/foundation-001-hero-calisthenics-split.png"
-          alt="Model im Calisthenics-Park trägt THE FORM, daneben eine Detailaufnahme des Shirt-Logos"
+          src="./assets/model/model-new-back.webp"
+          alt="Model trägt THE FORM in Charcoal mit großem CC-Backprint in einer alltäglichen Wohnsituation"
           className="campaign__wide-img"
         />
       </div>
 
       <div className="campaign__stack">
         <img
-          src="./assets/hero/foundation-001-hero-model-mobile.png"
-          alt="Model im Calisthenics-Park trägt THE FORM"
+          src="./assets/model/model-new-front.webp"
+          alt="Model trägt THE FORM in Charcoal in einer alltäglichen Wohnsituation"
           className="campaign__stack-img"
         />
         <img
-          src="./assets/hero/foundation-001-hero-detail-mobile.png"
-          alt="Detailaufnahme des THE FORM Shirt-Logos"
+          src="./assets/model/model-new-back.webp"
+          alt="Rückansicht von THE FORM in Charcoal mit großem CC-Backprint"
           className="campaign__stack-img"
         />
       </div>
