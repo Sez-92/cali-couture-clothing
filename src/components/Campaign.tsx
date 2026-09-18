@@ -10,7 +10,7 @@ export default function Campaign() {
 
       <div className="campaign__wide">
         <img
-          src="./assets/editorial/mannequin-desk-charcoal-v3.png"
+          src="./assets/editorial/mannequin-desk-charcoal-v4.png"
           alt="Gesichtslose Cali Couture Schaufensterpuppe arbeitet am Schreibtisch im Charcoal Shirt"
           className="campaign__wide-img"
           loading="lazy"
@@ -19,13 +19,13 @@ export default function Campaign() {
 
       <div className="campaign__stack">
         <img
-          src="./assets/editorial/mannequin-desk-charcoal-v3.png"
+          src="./assets/editorial/mannequin-desk-charcoal-v4.png"
           alt="Gesichtslose Cali Couture Schaufensterpuppe arbeitet am Schreibtisch im Charcoal Shirt"
           className="campaign__stack-img"
           loading="lazy"
         />
         <img
-          src="./assets/model/mannequin-boxy-duo-v3.png"
+          src="./assets/model/mannequin-boxy-duo-v4.png"
           alt="Cali Couture BOXY Silhouetten in Charcoal und Sand auf gesichtslosen Schaufensterpuppen"
           className="campaign__stack-img"
           loading="lazy"

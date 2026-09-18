@@ -41,13 +41,13 @@ export default function AboutPage() {
             }}
           >
             <img
-              src="./assets/model/mannequin-boxy-duo-v3.png"
+              src="./assets/model/mannequin-boxy-duo-v4.png"
               alt="Gesichtslose Cali Couture Schaufensterpuppen in Charcoal und Sand"
               className="park-transition__base"
               loading="lazy"
             />
             <img
-              src="./assets/editorial/mannequin-cafe-cropped-back-v3.png"
+              src="./assets/editorial/mannequin-cafe-cropped-back-v4.png"
               alt="Gesichtslose Cali Couture Schaufensterpuppe von hinten an der Café-Bar mit großem CC-Backprint"
               className="park-transition__overlay"
               loading="lazy"
