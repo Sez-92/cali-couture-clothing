@@ -45,30 +45,24 @@
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  background: var(--bg-panel);
 }
 
-.park-transition__base,
-.park-transition__overlay {
+.park-transition__scene {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.park-transition__base {
-  object-position: 50% 15%;
-}
-
-.park-transition__overlay {
-  object-position: 50% 22%;
+  object-position: center;
   opacity: 0;
-  transition: opacity 700ms var(--ease-out);
+  transform: scale(1.015);
+  transition: opacity 520ms var(--ease-out), transform 700ms var(--ease-out);
 }
 
-.park-transition__stage:hover .park-transition__overlay,
-.park-transition__stage:focus-visible .park-transition__overlay {
+.park-transition__scene.is-active {
   opacity: 1;
+  transform: scale(1);
 }
 
 .park-transition__copy {
@@ -78,10 +72,12 @@
   bottom: 0;
   z-index: 2;
   padding: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(7.5rem, 25vw, 11rem);
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  background: linear-gradient(to top, rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0));
+  gap: 0.35rem;
+  background: linear-gradient(to top, rgba(21, 21, 21, 0.62), rgba(21, 21, 21, 0));
+  pointer-events: none;
 }
 
 .park-transition__line {
@@ -89,44 +85,66 @@
   font-weight: 800;
   text-transform: uppercase;
   color: var(--chrome-light);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity var(--dur-mid) var(--ease-out), transform var(--dur-mid) var(--ease-out);
 }
 
 .park-transition__line--1 {
-  font-size: clamp(1.15rem, 2.6vw, 1.9rem);
+  font-size: clamp(1.05rem, 2.4vw, 1.75rem);
   line-height: 1.2;
   max-width: 22ch;
 }
 
 .park-transition__line--2 {
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.78rem, 1.2vw, 0.98rem);
   letter-spacing: 0.04em;
   color: var(--c-sand);
 }
 
-.park-transition__stage:hover .park-transition__line,
-.park-transition__stage:focus-visible .park-transition__line {
-  opacity: 1;
-  transform: none;
+.park-transition__switch {
+  position: absolute;
+  z-index: 3;
+  right: clamp(0.8rem, 3vw, 1.5rem);
+  bottom: clamp(0.8rem, 3vw, 1.5rem);
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-pill);
+  background: rgba(20, 20, 20, 0.38);
+  backdrop-filter: blur(10px);
 }
 
-.park-transition__stage:hover .park-transition__line--2,
-.park-transition__stage:focus-visible .park-transition__line--2 {
-  transition-delay: 150ms;
+.park-transition__switch-btn {
+  min-width: 3.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-pill);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+
+.park-transition__switch-btn.is-active {
+  color: var(--text-main);
+  background: var(--chrome-light);
 }
 
 @media (min-width: 1024px) {
   .park-transition__stage {
-    max-width: 640px;
+    max-width: 720px;
     margin-inline: auto;
   }
 }
 
+@media (max-width: 520px) {
+  .park-transition__copy {
+    padding-right: 1.25rem;
+    padding-bottom: 5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .park-transition__overlay,
-  .park-transition__line {
+  .park-transition__scene {
     transition: none;
   }
 }

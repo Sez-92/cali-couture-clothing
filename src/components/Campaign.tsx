@@ -10,21 +10,21 @@ export default function Campaign() {
 
       <div className="campaign__wide">
         <img
-          src="./assets/model/model-new-back.webp"
-          alt="Model trägt THE FORM in Charcoal mit großem CC-Backprint in einer alltäglichen Wohnsituation"
+          src="./assets/model/mannequin-workspace.webp"
+          alt="Schaufensterfigur trägt THE FORM in Charcoal an einem reduzierten Arbeitsplatz"
           className="campaign__wide-img"
         />
       </div>
 
       <div className="campaign__stack">
         <img
-          src="./assets/model/model-new-front.webp"
-          alt="Model trägt THE FORM in Charcoal in einer alltäglichen Wohnsituation"
+          src="./assets/model/mannequin-boxy.webp"
+          alt="Schaufensterfiguren präsentieren THE FORM in Charcoal und Sand"
           className="campaign__stack-img"
         />
         <img
-          src="./assets/model/model-new-back.webp"
-          alt="Rückansicht von THE FORM in Charcoal mit großem CC-Backprint"
+          src="./assets/model/mannequin-cafe.webp"
+          alt="Cropped Cali Couture Shirt mit großem CC auf dem Rücken im Café"
           className="campaign__stack-img"
         />
       </div>

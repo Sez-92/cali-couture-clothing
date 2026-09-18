@@ -51,14 +51,29 @@ export function formatPrice(cents: number, currency = "EUR") {
 
 export const MODEL_IMAGES: { src: string; alt: string; label: string }[] = [
   {
-    src: "./assets/model/model-new-front.webp",
-    alt: "Model trägt THE FORM in Charcoal im Alltag, Vorderansicht",
-    label: "Front",
+    src: "./assets/model/mannequin-boxy.webp",
+    alt: "Zwei neutrale Schaufensterfiguren präsentieren THE FORM in Charcoal und Sand im lockeren Boxy Fit",
+    label: "BOXY",
   },
   {
-    src: "./assets/model/model-new-back.webp",
-    alt: "Model trägt THE FORM in Charcoal mit großem CC-Backprint, Rückansicht",
-    label: "Back",
+    src: "./assets/model/mannequin-fitted.webp",
+    alt: "Zwei neutrale Schaufensterfiguren präsentieren eine körpernähere Cali Couture Silhouette",
+    label: "FITTED",
+  },
+  {
+    src: "./assets/model/mannequin-workspace.webp",
+    alt: "Neutrale Schaufensterfigur trägt THE FORM in Charcoal an einem reduzierten Arbeitsplatz",
+    label: "WORK",
+  },
+  {
+    src: "./assets/model/mannequin-cafe.webp",
+    alt: "Neutrale Schaufensterfigur trägt das sandfarbene Cropped Shirt mit großem CC auf dem Rücken im Café",
+    label: "CAFÉ",
+  },
+  {
+    src: "./assets/model/mannequin-park.webp",
+    alt: "Neutrale Schaufensterfigur trägt Cali Couture im Calisthenics Park",
+    label: "PARK",
   },
 ];
 
