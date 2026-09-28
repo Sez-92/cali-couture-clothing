@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
-export type Route = "about" | "drop";
+export type Route = "about" | "drop" | "prelaunch";
 
 function parseRoute(): Route {
-  return window.location.hash === "#/about" ? "about" : "drop";
+  if (window.location.hash === "#/about") return "about";
+  if (window.location.hash === "#/drop") return "drop";
+  return "prelaunch";
 }
 
 export function useHashRoute(): [Route, (route: Route) => void] {
@@ -16,7 +18,7 @@ export function useHashRoute(): [Route, (route: Route) => void] {
   }, []);
 
   function navigate(next: Route) {
-    const target = next === "about" ? "#/about" : "#/drop";
+    const target = next === "about" ? "#/about" : next === "drop" ? "#/drop" : "#/";
     if (window.location.hash === target) {
       setRoute(next);
     } else {

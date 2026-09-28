@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PrelaunchPage from "./pages/PrelaunchPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
@@ -16,7 +17,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <div className="no-overflow-guard">
+      {route === "prelaunch" ? <PrelaunchPage /> : <div className="no-overflow-guard">
         <Header bagCount={bagCount} />
         {route === "about" ? (
           <AboutPage />
@@ -24,7 +25,7 @@ export default function App() {
           <DropPage onPreorder={() => setBagCount((c) => c + 1)} />
         )}
         <Footer />
-      </div>
+      </div>}
     </LanguageProvider>
   );
 }
