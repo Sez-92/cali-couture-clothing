@@ -13,11 +13,11 @@
 .drop-header { display: flex; justify-content: center; padding: 38px 24px 18px }
 .drop-header img { width: 156px; height: auto }
 .drop-main { width: 100%; max-width: 1100px; margin: auto; padding: 28px 48px 40px }
-.drop-gallery { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 76px); padding: 0 30px }
-.drop-detail { width: 330px; margin: 0; min-width: 0 }
-.drop-detail:first-child { transform: translateY(18px) }
-.drop-detail:last-child { width: 286px; transform: translateY(-18px) }
-.drop-photo { width: 100%; aspect-ratio: 3 / 4; position: relative; overflow: hidden; display: block; padding: 0; background: #d8d4cb; cursor: pointer }
+.drop-gallery { display: flex; align-items: center; justify-content: center; gap: clamp(22px, 4vw, 54px); padding: 0 24px }
+.drop-detail { width: min(39vw, 390px); margin: 0; min-width: 0 }
+.drop-detail:first-child { transform: translateY(14px) }
+.drop-detail:last-child { width: min(39vw, 390px); transform: translateY(-14px) }
+.drop-photo { width: 100%; aspect-ratio: 1 / 1; position: relative; overflow: hidden; display: block; padding: 0; background: #d8d4cb; cursor: pointer }
 .drop-photo img { width: 100%; height: 100%; object-fit: cover; display: block }
 .drop-photo-full { background: #e7e4dc }
 .drop-photo-full img { object-fit: contain; padding: 8% }
@@ -25,6 +25,7 @@
 .drop-detail figcaption button { min-height: 44px; padding: 0; display: flex; align-items: center; gap: 18px; min-width: 85px; justify-content: flex-end; font-size: 18px }
 .drop-count { font-size: 9px; color: #6b6b63; font-variant-numeric: tabular-nums }
 .drop-message { text-align: center; padding-top: 42px }
+.drop-season { margin: 0 0 9px; font-size: 9px; letter-spacing: .22em; color: #6b6b63 }
 .drop-message h1 { font-size: clamp(32px, 3.2vw, 48px); line-height: 1.15; font-weight: 400; letter-spacing: -.06em }
 .drop-instagram { display: inline-flex; align-items: center; gap: 24px; margin-top: 15px; padding: 8px 0; border-bottom: 1px solid #22231f; font-size: 12px; line-height: 1.5 }
 .drop-instagram:hover { opacity: .6 }
@@ -43,9 +44,9 @@
   .drop-header img { width: 142px }
   .drop-main { padding: 38px 20px 40px }
   .drop-gallery { gap: 14px; padding: 0; align-items: flex-start }
-  .drop-detail { width: 53% }
+  .drop-detail { width: 52% }
   .drop-detail:first-child { transform: none }
-  .drop-detail:last-child { width: 47%; transform: none; margin-top: 62px }
+  .drop-detail:last-child { width: 48%; transform: none; margin-top: 42px }
   .drop-detail figcaption { align-items: flex-start; padding-top: 10px; font-size: 10px; flex-wrap: wrap; gap: 0 }
   .drop-detail figcaption button { min-width: 64px; gap: 9px; margin-top: -15px }
   .drop-count { font-size: 8px }
