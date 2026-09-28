@@ -5,7 +5,7 @@ import "./PrelaunchPage.css";
 export default function PrelaunchPage() {
   const { language, setLanguage } = useLanguage();
   const [reveal, setReveal] = useState(0);
-  const instagramUrl = "";
+  const instagramUrl = "https://www.instagram.com/calicouture.clothing/";
   const socialUrl = instagramUrl || "mailto:hello@calicouture.clothing";
   const en = language === "en";
   function focusFollow() {
