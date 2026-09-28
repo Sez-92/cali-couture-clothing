@@ -38,11 +38,12 @@ export default function PrelaunchPage() {
         <a href="#/" aria-label="Cali Couture — Startseite"><img src="./assets/logos/cali-couture-wordmark.svg" alt="Cali Couture" width="170" height="42" /></a>
       </header>
       <main className="drop-main">
-        <div className="drop-gallery" aria-label="Einblicke in T-Shirts und Hoodies">
-          <Detail name="T-Shirts" shots={shirts} />
-          <Detail name="Hoodies" shots={hoodies} />
+        <div className="drop-gallery" aria-label="Drop 01 — Winter 2026">
+          <Detail name="Chocolate" shots={chocolate} />
+          <Detail name="Ivory" shots={ivory} />
         </div>
         <div className="drop-message">
+          <p className="drop-season">DROP 01 · WINTER 2026</p>
           <h1>First drop soon</h1>
           <a className="drop-instagram" href="https://www.instagram.com/calicouture.clothing/" target="_blank" rel="noopener noreferrer">Follow on Instagram <span aria-hidden="true">↗</span></a>
         </div>
